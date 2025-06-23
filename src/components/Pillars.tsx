@@ -1,7 +1,7 @@
 import React from 'react';
 import { Users, Heart, Globe, Handshake, MapPin, Cross, Church } from 'lucide-react';
 
-const Pillars = () => {<Cross className={`h-6 w-6 sm:h-8 sm:w-8 ${isScrolled || !isHomePage ? 'text-blue-600' : 'text-white'}`} />
+const Pillars = () => {
   const pillars = [
     {
       id: 1,
@@ -203,7 +203,7 @@ const Pillars = () => {<Cross className={`h-6 w-6 sm:h-8 sm:w-8 ${isScrolled || 
         <div className="mt-8 sm:mt-12 lg:mt-16">
           <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 text-white text-center shadow-2xl">
             <Cross className={`h-6 w-6 sm:h-8 sm:w-8 ${isScrolled || !isHomePage ? 'text-blue-600' : 'text-white'}`} />
-            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4">
+            <h3 classNzzzzame="text-xl sm:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4">
               Let's Continue to Pray
             </h3>
             <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-blue-100 mb-4 sm:mb-6 max-w-2xl mx-auto px-2">

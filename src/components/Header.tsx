@@ -16,6 +16,28 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Element;
+      if (isMenuOpen && !target.closest('nav')) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener('click', handleClickOutside);
+      document.body.style.overflow = 'hidden'; // Prevent background scroll
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
+
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'About', href: isHomePage ? '#about' : '/#about' },
@@ -38,23 +60,23 @@ const Header = () => {
       isScrolled || !isHomePage ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
     }`}>
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <Cross className={`h-8 w-8 ${isScrolled || !isHomePage ? 'text-blue-600' : 'text-white'}`} />
-            <span className={`text-xl font-bold ${isScrolled || !isHomePage ? 'text-gray-900' : 'text-white'}`}>
+          <Link to="/" className="flex items-center space-x-2 z-50">
+            <Cross className={`h-6 w-6 sm:h-8 sm:w-8 ${isScrolled || !isHomePage ? 'text-blue-600' : 'text-white'}`} />
+            <span className={`text-lg sm:text-xl font-bold ${isScrolled || !isHomePage ? 'text-gray-900' : 'text-white'}`}>
               Lakeview AGC
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
             {navItems.map((item) => (
               item.href.startsWith('/') ? (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`font-medium transition-colors hover:text-blue-600 ${
+                  className={`font-medium transition-colors hover:text-blue-600 text-sm xl:text-base ${
                     isScrolled || !isHomePage ? 'text-gray-900' : 'text-white hover:text-blue-200'
                   }`}
                 >
@@ -70,7 +92,7 @@ const Header = () => {
                       handleNavClick(item.href);
                     }
                   }}
-                  className={`font-medium transition-colors hover:text-blue-600 ${
+                  className={`font-medium transition-colors hover:text-blue-600 text-sm xl:text-base ${
                     isScrolled || !isHomePage ? 'text-gray-900' : 'text-white hover:text-blue-200'
                   }`}
                 >
@@ -78,7 +100,7 @@ const Header = () => {
                 </a>
               )
             ))}
-            <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 text-sm lg:px-6 shadow-lg">
+            <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 xl:px-6 py-2 rounded-full font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 text-sm xl:text-base shadow-lg">
               Give
             </button>
           </div>
@@ -86,47 +108,52 @@ const Header = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className={`md:hidden p-2 rounded-md ${isScrolled || !isHomePage ? 'text-gray-900' : 'text-white'}`}
+            className={`lg:hidden p-2 rounded-md z-50 ${isScrolled || !isHomePage ? 'text-gray-900' : 'text-white'}`}
+            aria-label="Toggle menu"
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation Overlay */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-200 shadow-lg">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {navItems.map((item) => (
-                item.href.startsWith('/') ? (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className="block px-3 py-2 text-gray-900 font-medium hover:text-blue-600 hover:bg-gray-50 rounded-md"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                ) : (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="block px-3 py-2 text-gray-900 font-medium hover:text-blue-600 hover:bg-gray-50 rounded-md"
-                    onClick={(e) => {
-                      if (item.href.startsWith('#') && isHomePage) {
-                        e.preventDefault();
-                        handleNavClick(item.href);
-                      } else {
-                        setIsMenuOpen(false);
-                      }
-                    }}
-                  >
-                    {item.name}
-                  </a>
-                )
-              ))}
-              <button className="w-full mt-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300">
-                Give
-              </button>
+          <div className="lg:hidden fixed inset-0 top-14 sm:top-16 bg-white z-40">
+            <div className="h-full overflow-y-auto">
+              <div className="px-4 py-6 space-y-4">
+                {navItems.map((item) => (
+                  item.href.startsWith('/') ? (
+                    <Link
+                      key={item.name}
+                      to={item.href}
+                      className="block px-4 py-3 text-gray-900 font-medium hover:text-blue-600 hover:bg-gray-50 rounded-lg text-lg"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  ) : (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className="block px-4 py-3 text-gray-900 font-medium hover:text-blue-600 hover:bg-gray-50 rounded-lg text-lg"
+                      onClick={(e) => {
+                        if (item.href.startsWith('#') && isHomePage) {
+                          e.preventDefault();
+                          handleNavClick(item.href);
+                        } else {
+                          setIsMenuOpen(false);
+                        }
+                      }}
+                    >
+                      {item.name}
+                    </a>
+                  )
+                ))}
+                <div className="pt-4 border-t border-gray-200">
+                  <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 text-lg">
+                    Give
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         )}

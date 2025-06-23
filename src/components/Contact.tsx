@@ -6,17 +6,17 @@ const Contact = () => {
     {
       icon: MapPin,
       title: 'Address',
-      details: ['123 Lakeview Drive', 'Anytown, ST 12345']
+      details: ['Section 58, Nakuru', 'Facing Lake Nakuru']
     },
     {
       icon: Phone,
       title: 'Phone',
-      details: ['(555) 123-4567', 'Emergency: (555) 987-6543']
+      details: ['0797438190', 'Emergency: 0726907931']
     },
     {
       icon: Mail,
       title: 'Email',
-      details: ['info@lakeviewagc.org', 'pastor@lakeviewagc.org']
+      details: ['info@lakeviewagc.net', 'pastor@lakeviewagc.net']
     },
     {
       icon: Clock,
@@ -26,57 +26,57 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-12 sm:py-16 lg:py-20 bg-gray-50">
+    <section id="contact" className="py-8 sm:py-12 lg:py-16 xl:py-20 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Get In Touch</h2>
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-2">
             We'd love to hear from you! Whether you have questions, need prayer, or want to get involved, 
             don't hesitate to reach out to our church family.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
+        <div className="grid gap-6 sm:gap-8 lg:gap-12 lg:grid-cols-3">
           {/* Contact Information */}
           <div className="lg:col-span-1">
-            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6 sm:mb-8">Contact Information</h3>
-            <div className="space-y-6">
+            <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-4 sm:mb-6 lg:mb-8">Contact Information</h3>
+            <div className="space-y-4 sm:space-y-6">
               {contactInfo.map((info, index) => (
                 <div key={index} className="flex items-start">
-                  <div className="bg-blue-100 p-3 rounded-lg mr-4 flex-shrink-0">
-                    <info.icon className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600" />
+                  <div className="bg-blue-100 p-2 sm:p-3 rounded-lg mr-3 sm:mr-4 flex-shrink-0">
+                    <info.icon className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 text-blue-600" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1 text-sm sm:text-base">{info.title}</h4>
                     {info.details.map((detail, idx) => (
-                      <p key={idx} className="text-gray-600 text-sm sm:text-base">{detail}</p>
+                      <p key={idx} className="text-gray-600 text-xs sm:text-sm lg:text-base">{detail}</p>
                     ))}
                   </div>
                 </div>
               ))}
             </div>
 
-            {/* Prayer Request */}
-            <div className="mt-8 bg-blue-600 rounded-2xl p-6 text-white">
-              <div className="flex items-center mb-4">
-                <MessageSquare className="h-5 w-5 sm:h-6 sm:w-6 mr-2" />
-                <h4 className="text-base sm:text-lg font-semibold">Prayer Requests</h4>
+            {/* Prayer Request - Mobile Optimized */}
+            <div className="mt-6 sm:mt-8 bg-blue-600 rounded-xl sm:rounded-2xl p-4 sm:p-6 text-white">
+              <div className="flex items-center mb-3 sm:mb-4">
+                <MessageSquare className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 mr-2" />
+                <h4 className="text-sm sm:text-base lg:text-lg font-semibold">Prayer Requests</h4>
               </div>
-              <p className="text-blue-100 mb-4 text-sm sm:text-base">
+              <p className="text-blue-100 mb-3 sm:mb-4 text-xs sm:text-sm lg:text-base">
                 Submit your prayer requests and our prayer team will lift you up in prayer.
               </p>
-              <button className="bg-white text-blue-600 px-4 sm:px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition-colors text-sm sm:text-base">
+              <button className="bg-white text-blue-600 px-4 sm:px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition-colors text-xs sm:text-sm lg:text-base">
                 Submit Request
               </button>
             </div>
           </div>
 
-          {/* Contact Form */}
+          {/* Contact Form - Mobile Optimized */}
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8">
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h3>
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-6 lg:p-8">
+              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Send Us a Message</h3>
+              <form className="space-y-4 sm:space-y-6">
+                <div className="grid gap-4 sm:gap-6 md:grid-cols-2">
                   <div>
                     <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
                       First Name
@@ -84,7 +84,7 @@ const Contact = () => {
                     <input
                       type="text"
                       id="firstName"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"
                       placeholder="Your first name"
                     />
                   </div>
@@ -95,7 +95,7 @@ const Contact = () => {
                     <input
                       type="text"
                       id="lastName"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"
                       placeholder="Your last name"
                     />
                   </div>
@@ -108,7 +108,7 @@ const Contact = () => {
                   <input
                     type="email"
                     id="email"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -120,8 +120,8 @@ const Contact = () => {
                   <input
                     type="tel"
                     id="phone"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"
-                    placeholder="(555) 123-4567"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"
+                    placeholder="0700 000 000"
                   />
                 </div>
 
@@ -131,7 +131,7 @@ const Contact = () => {
                   </label>
                   <select
                     id="subject"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"
                   >
                     <option value="">Select a subject</option>
                     <option value="general">General Inquiry</option>
@@ -148,8 +148,8 @@ const Contact = () => {
                   </label>
                   <textarea
                     id="message"
-                    rows={5}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"
+                    rows={4}
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base resize-none"
                     placeholder="Tell us how we can help you..."
                   ></textarea>
                 </div>
@@ -166,20 +166,25 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Map Section */}
-        <div className="mt-12 sm:mt-16 bg-white rounded-2xl shadow-lg overflow-hidden">
-          <div className="p-6 sm:p-8">
-            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Find Us Here</h3>
-            <p className="text-sm sm:text-base text-gray-600 mb-6">
-              Located in the heart of the community, our church is easily accessible with plenty of parking available.
+        {/* Map Section - Mobile Optimized */}
+        <div className="mt-8 sm:mt-12 lg:mt-16 bg-white rounded-xl sm:rounded-2xl shadow-lg overflow-hidden">
+          <div className="p-4 sm:p-6 lg:p-8">
+            <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Find Us Here</h3>
+            <p className="text-xs sm:text-sm lg:text-base text-gray-600 mb-4 sm:mb-6">
+              Located in Section 58, Nakuru, facing Lake Nakuru. Our church is easily accessible with ample parking available.
             </p>
           </div>
-          <div className="bg-gray-200 h-48 sm:h-64 flex items-center justify-center">
-            <div className="text-center text-gray-500">
-              <MapPin className="h-8 w-8 sm:h-12 sm:w-12 mx-auto mb-2" />
-              <p className="text-sm sm:text-base">Interactive Map</p>
-              <p className="text-xs sm:text-sm">123 Lakeview Drive, Anytown, ST 12345</p>
-            </div>
+          <div className="w-full h-48 sm:h-64 lg:h-80 xl:h-96">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.767972921741!2d36.091611674040266!3d-0.2878393353479355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18299274ae85cb9f%3A0x371b0a1059a0ea54!2sLakeview%20Africa%20Gospel%20Church!5e0!3m2!1sen!2ske!4v1750641375712!5m2!1sen!2ske" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-full"
+            />
           </div>
         </div>
       </div>

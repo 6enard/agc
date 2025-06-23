@@ -14,8 +14,8 @@ const MinistryDetail = () => {
       meetingTime: 'Sundays 6:00 PM - 8:00 PM',
       location: 'Youth Center',
       leader: 'Pastor Mike Johnson',
-      contact: 'youth@lakeviewagc.org',
-      phone: '(555) 123-4567 ext. 102',
+      contact: 'youth@lakeviewagc.net',
+      phone: '0726907931',
       color: 'bg-purple-500',
       heroImage: 'https://images.pexels.com/photos/8468525/pexels-photo-8468525.jpeg?auto=compress&cs=tinysrgb&w=1200&h=600&fit=crop',
       gallery: [
@@ -70,9 +70,9 @@ const MinistryDetail = () => {
       age: 'All Ages',
       meetingTime: 'Tuesdays 7:00 PM - 8:30 PM',
       location: 'Fellowship Hall',
-      leader: 'Sarah Williams',
-      contact: 'women@lakeviewagc.org',
-      phone: '(555) 123-4567 ext. 103',
+      leader: 'Pastor Rachel Ngetich',
+      contact: 'women@lakeviewagc.net',
+      phone: '0721406155',
       color: 'bg-pink-500',
       heroImage: 'https://images.pexels.com/photos/8468525/pexels-photo-8468525.jpeg?auto=compress&cs=tinysrgb&w=1200&h=600&fit=crop',
       gallery: [
@@ -128,8 +128,8 @@ const MinistryDetail = () => {
       meetingTime: 'Sundays during both services',
       location: 'Children\'s Wing',
       leader: 'Jennifer Martinez',
-      contact: 'kids@lakeviewagc.org',
-      phone: '(555) 123-4567 ext. 104',
+      contact: 'kids@lakeviewagc.net',
+      phone: '0721406155',
       color: 'bg-green-500',
       heroImage: 'https://images.pexels.com/photos/8468470/pexels-photo-8468470.jpeg?auto=compress&cs=tinysrgb&w=1200&h=600&fit=crop',
       gallery: [
@@ -144,7 +144,7 @@ const MinistryDetail = () => {
         {
           name: 'Sunday School',
           description: 'Age-appropriate Bible lessons during both Sunday services',
-          time: 'Sundays 9:00 AM & 11:00 AM'
+          time: 'Sundays 8:30 AM & 10:00 AM'
         },
         {
           name: 'Vacation Bible School',
@@ -185,8 +185,8 @@ const MinistryDetail = () => {
       meetingTime: 'Thursdays 7:00 PM - 9:00 PM',
       location: 'Main Sanctuary',
       leader: 'David Chen',
-      contact: 'worship@lakeviewagc.org',
-      phone: '(555) 123-4567 ext. 105',
+      contact: 'worship@lakeviewagc.net',
+      phone: '0726907931',
       color: 'bg-blue-500',
       heroImage: 'https://images.pexels.com/photos/8828489/pexels-photo-8828489.jpeg?auto=compress&cs=tinysrgb&w=1200&h=600&fit=crop',
       gallery: [
@@ -242,8 +242,8 @@ const MinistryDetail = () => {
       meetingTime: 'Saturdays 9:00 AM - 12:00 PM',
       location: 'Community Center',
       leader: 'Maria Rodriguez',
-      contact: 'outreach@lakeviewagc.org',
-      phone: '(555) 123-4567 ext. 106',
+      contact: 'outreach@lakeviewagc.net',
+      phone: '0797438190',
       color: 'bg-orange-500',
       heroImage: 'https://images.pexels.com/photos/6646921/pexels-photo-6646921.jpeg?auto=compress&cs=tinysrgb&w=1200&h=600&fit=crop',
       gallery: [
@@ -299,8 +299,8 @@ const MinistryDetail = () => {
       meetingTime: 'Various times throughout the week',
       location: 'Various Locations',
       leader: 'Pastor Tom Anderson',
-      contact: 'smallgroups@lakeviewagc.org',
-      phone: '(555) 123-4567 ext. 107',
+      contact: 'smallgroups@lakeviewagc.net',
+      phone: '0726907931',
       color: 'bg-teal-500',
       heroImage: 'https://images.pexels.com/photos/8468525/pexels-photo-8468525.jpeg?auto=compress&cs=tinysrgb&w=1200&h=600&fit=crop',
       gallery: [
@@ -354,10 +354,10 @@ const MinistryDetail = () => {
 
   if (!ministry) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center px-4">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">Ministry Not Found</h1>
-          <Link to="/" className="text-blue-600 hover:text-blue-700">
+          <h1 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Ministry Not Found</h1>
+          <Link to="/" className="text-blue-600 hover:text-blue-700 text-sm sm:text-base">
             Return to Home
           </Link>
         </div>
@@ -366,9 +366,9 @@ const MinistryDetail = () => {
   }
 
   return (
-    <div className="min-h-screen pt-16 lg:pt-20">
-      {/* Hero Section */}
-      <section className="relative h-64 sm:h-80 lg:h-96 overflow-hidden">
+    <div className="min-h-screen pt-14 sm:pt-16 lg:pt-20">
+      {/* Hero Section - Mobile Optimized */}
+      <section className="relative h-48 sm:h-64 lg:h-80 xl:h-96 overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${ministry.heroImage})` }}
@@ -379,50 +379,50 @@ const MinistryDetail = () => {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <Link 
               to="/#ministries"
-              className="inline-flex items-center text-white hover:text-blue-200 transition-colors mb-4 text-sm sm:text-base"
+              className="inline-flex items-center text-white hover:text-blue-200 transition-colors mb-3 sm:mb-4 text-xs sm:text-sm lg:text-base"
             >
-              <ArrowLeft className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
+              <ArrowLeft className="h-3 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5 mr-1 sm:mr-2" />
               Back to Ministries
             </Link>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-4">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-1 sm:mb-2 lg:mb-4">
               {ministry.title}
             </h1>
-            <p className="text-lg sm:text-xl lg:text-2xl text-blue-200">
+            <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-blue-200">
               {ministry.subtitle}
             </p>
           </div>
         </div>
       </section>
 
-      {/* Ministry Info */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+      {/* Ministry Info - Mobile Optimized */}
+      <section className="py-8 sm:py-12 lg:py-16 xl:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
+          <div className="grid gap-6 sm:gap-8 lg:gap-12 lg:grid-cols-3">
             {/* Main Content */}
             <div className="lg:col-span-2">
-              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">About Our Ministry</h2>
-              <p className="text-base sm:text-lg text-gray-600 mb-8 leading-relaxed">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">About Our Ministry</h2>
+              <p className="text-sm sm:text-base lg:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
                 {ministry.description}
               </p>
 
-              {/* Programs */}
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6">Our Programs</h3>
-              <div className="grid sm:grid-cols-2 gap-6 mb-12">
+              {/* Programs - Mobile Optimized */}
+              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Our Programs</h3>
+              <div className="grid gap-4 sm:gap-6 mb-8 sm:mb-12 sm:grid-cols-2">
                 {ministry.programs.map((program, index) => (
-                  <div key={index} className="bg-gray-50 rounded-xl p-6">
-                    <h4 className="text-lg font-bold text-gray-900 mb-2">{program.name}</h4>
-                    <p className="text-gray-600 mb-3 text-sm sm:text-base">{program.description}</p>
-                    <div className="flex items-center text-blue-600 text-sm">
-                      <Clock className="h-4 w-4 mr-2" />
+                  <div key={index} className="bg-gray-50 rounded-lg sm:rounded-xl p-4 sm:p-6">
+                    <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-2">{program.name}</h4>
+                    <p className="text-gray-600 mb-2 sm:mb-3 text-xs sm:text-sm lg:text-base">{program.description}</p>
+                    <div className="flex items-center text-blue-600 text-xs sm:text-sm">
+                      <Clock className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
                       {program.time}
                     </div>
                   </div>
                 ))}
               </div>
 
-              {/* Photo Gallery */}
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6">Photo Gallery</h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-12">
+              {/* Photo Gallery - Mobile Optimized */}
+              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Photo Gallery</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-4 mb-8 sm:mb-12">
                 {ministry.gallery.map((image, index) => (
                   <div key={index} className="aspect-square overflow-hidden rounded-lg">
                     <img 
@@ -435,49 +435,49 @@ const MinistryDetail = () => {
               </div>
             </div>
 
-            {/* Sidebar */}
+            {/* Sidebar - Mobile Optimized */}
             <div className="lg:col-span-1">
-              <div className="bg-gray-50 rounded-2xl p-6 sm:p-8 sticky top-24">
-                <h3 className="text-xl font-bold text-gray-900 mb-6">Ministry Details</h3>
+              <div className="bg-gray-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 sticky top-20 sm:top-24">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6">Ministry Details</h3>
                 
-                <div className="space-y-4 mb-8">
+                <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                   <div className="flex items-start">
-                    <Users className="h-5 w-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" />
+                    <Users className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600 mr-2 sm:mr-3 mt-0.5 flex-shrink-0" />
                     <div>
-                      <div className="font-medium text-gray-900 text-sm sm:text-base">Age Group</div>
-                      <div className="text-gray-600 text-sm sm:text-base">{ministry.age}</div>
+                      <div className="font-medium text-gray-900 text-xs sm:text-sm lg:text-base">Age Group</div>
+                      <div className="text-gray-600 text-xs sm:text-sm lg:text-base">{ministry.age}</div>
                     </div>
                   </div>
                   
                   <div className="flex items-start">
-                    <Clock className="h-5 w-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" />
+                    <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600 mr-2 sm:mr-3 mt-0.5 flex-shrink-0" />
                     <div>
-                      <div className="font-medium text-gray-900 text-sm sm:text-base">Meeting Time</div>
-                      <div className="text-gray-600 text-sm sm:text-base">{ministry.meetingTime}</div>
+                      <div className="font-medium text-gray-900 text-xs sm:text-sm lg:text-base">Meeting Time</div>
+                      <div className="text-gray-600 text-xs sm:text-sm lg:text-base">{ministry.meetingTime}</div>
                     </div>
                   </div>
                   
                   <div className="flex items-start">
-                    <MapPin className="h-5 w-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" />
+                    <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600 mr-2 sm:mr-3 mt-0.5 flex-shrink-0" />
                     <div>
-                      <div className="font-medium text-gray-900 text-sm sm:text-base">Location</div>
-                      <div className="text-gray-600 text-sm sm:text-base">{ministry.location}</div>
+                      <div className="font-medium text-gray-900 text-xs sm:text-sm lg:text-base">Location</div>
+                      <div className="text-gray-600 text-xs sm:text-sm lg:text-base">{ministry.location}</div>
                     </div>
                   </div>
                 </div>
 
-                <div className="border-t border-gray-200 pt-6 mb-8">
-                  <h4 className="font-bold text-gray-900 mb-4 text-sm sm:text-base">Ministry Leader</h4>
-                  <div className="space-y-3">
-                    <div className="text-gray-900 font-medium text-sm sm:text-base">{ministry.leader}</div>
-                    <div className="flex items-center text-gray-600 text-sm">
-                      <Mail className="h-4 w-4 mr-2 flex-shrink-0" />
-                      <a href={`mailto:${ministry.contact}`} className="hover:text-blue-600 transition-colors">
+                <div className="border-t border-gray-200 pt-4 sm:pt-6 mb-6 sm:mb-8">
+                  <h4 className="font-bold text-gray-900 mb-3 sm:mb-4 text-xs sm:text-sm lg:text-base">Ministry Leader</h4>
+                  <div className="space-y-2 sm:space-y-3">
+                    <div className="text-gray-900 font-medium text-xs sm:text-sm lg:text-base">{ministry.leader}</div>
+                    <div className="flex items-center text-gray-600 text-xs sm:text-sm">
+                      <Mail className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2 flex-shrink-0" />
+                      <a href={`mailto:${ministry.contact}`} className="hover:text-blue-600 transition-colors break-all">
                         {ministry.contact}
                       </a>
                     </div>
-                    <div className="flex items-center text-gray-600 text-sm">
-                      <Phone className="h-4 w-4 mr-2 flex-shrink-0" />
+                    <div className="flex items-center text-gray-600 text-xs sm:text-sm">
+                      <Phone className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2 flex-shrink-0" />
                       <a href={`tel:${ministry.phone}`} className="hover:text-blue-600 transition-colors">
                         {ministry.phone}
                       </a>
@@ -485,24 +485,24 @@ const MinistryDetail = () => {
                   </div>
                 </div>
 
-                <button className="w-full bg-blue-600 text-white px-6 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors text-sm sm:text-base">
+                <button className="w-full bg-blue-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium hover:bg-blue-700 transition-colors text-xs sm:text-sm lg:text-base">
                   Get Involved
                 </button>
               </div>
 
-              {/* Upcoming Events */}
+              {/* Upcoming Events - Mobile Optimized */}
               {ministry.upcomingEvents.length > 0 && (
-                <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 mt-8">
-                  <h3 className="text-xl font-bold text-gray-900 mb-6">Upcoming Events</h3>
-                  <div className="space-y-6">
+                <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-6 lg:p-8 mt-6 sm:mt-8">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6">Upcoming Events</h3>
+                  <div className="space-y-4 sm:space-y-6">
                     {ministry.upcomingEvents.map((event, index) => (
-                      <div key={index} className="border-l-4 border-blue-600 pl-4">
-                        <h4 className="font-bold text-gray-900 mb-1 text-sm sm:text-base">{event.title}</h4>
-                        <div className="flex items-center text-blue-600 mb-2 text-sm">
-                          <Calendar className="h-4 w-4 mr-2" />
+                      <div key={index} className="border-l-4 border-blue-600 pl-3 sm:pl-4">
+                        <h4 className="font-bold text-gray-900 mb-1 text-xs sm:text-sm lg:text-base">{event.title}</h4>
+                        <div className="flex items-center text-blue-600 mb-1 sm:mb-2 text-xs sm:text-sm">
+                          <Calendar className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
                           {event.date} • {event.time}
                         </div>
-                        <p className="text-gray-600 text-sm">{event.description}</p>
+                        <p className="text-gray-600 text-xs sm:text-sm">{event.description}</p>
                       </div>
                     ))}
                   </div>

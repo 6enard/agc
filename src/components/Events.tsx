@@ -56,69 +56,69 @@ const Events = () => {
   };
 
   return (
-    <section id="events" className="py-12 sm:py-16 lg:py-20 bg-white">
+    <section id="events" className="py-8 sm:py-12 lg:py-16 xl:py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Upcoming Events</h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Upcoming Events</h2>
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-2">
             Stay connected with our church family through special events, services, and community gatherings. 
             Mark your calendar and join us!
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12">
+        <div className="grid gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-8 lg:mb-12 lg:grid-cols-2">
           {events.map((event, index) => (
-            <div key={index} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
+            <div key={index} className="bg-white rounded-lg sm:rounded-2xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
               <div className="relative">
                 <img 
                   src={event.image} 
                   alt={event.title}
-                  className="w-full h-40 sm:h-48 object-cover"
+                  className="w-full h-32 sm:h-40 lg:h-48 object-cover"
                 />
-                <div className="absolute top-4 left-4 bg-white rounded-lg p-2 sm:p-3 text-center shadow-lg">
-                  <div className="text-lg sm:text-2xl font-bold text-blue-600">{event.date.split(' ')[1]}</div>
+                <div className="absolute top-3 left-3 sm:top-4 sm:left-4 bg-white rounded-lg p-2 sm:p-3 text-center shadow-lg">
+                  <div className="text-base sm:text-lg lg:text-2xl font-bold text-blue-600">{event.date.split(' ')[1]}</div>
                   <div className="text-xs sm:text-sm text-gray-600 uppercase">{event.date.split(' ')[0]}</div>
                   <div className="text-xs text-gray-500">{event.day}</div>
                 </div>
-                <div className="absolute top-4 right-4">
+                <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
                   <span className={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium ${getCategoryColor(event.category)}`}>
                     {event.category}
                   </span>
                 </div>
               </div>
               
-              <div className="p-4 sm:p-6">
-                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3">{event.title}</h3>
-                <p className="text-sm sm:text-base text-gray-600 mb-4">{event.description}</p>
+              <div className="p-3 sm:p-4 lg:p-6">
+                <h3 className="text-base sm:text-lg lg:text-xl font-bold text-gray-900 mb-2 sm:mb-3">{event.title}</h3>
+                <p className="text-xs sm:text-sm lg:text-base text-gray-600 mb-3 sm:mb-4">{event.description}</p>
                 
-                <div className="space-y-2 mb-4">
+                <div className="space-y-1 sm:space-y-2 mb-3 sm:mb-4">
                   <div className="flex items-center text-gray-500">
-                    <Clock className="h-4 w-4 mr-2 flex-shrink-0" />
+                    <Clock className="h-3 w-3 sm:h-4 sm:w-4 mr-2 flex-shrink-0" />
                     <span className="text-xs sm:text-sm">{event.time}</span>
                   </div>
                   <div className="flex items-center text-gray-500">
-                    <MapPin className="h-4 w-4 mr-2 flex-shrink-0" />
+                    <MapPin className="h-3 w-3 sm:h-4 sm:w-4 mr-2 flex-shrink-0" />
                     <span className="text-xs sm:text-sm">{event.location}</span>
                   </div>
                 </div>
                 
-                <button className="flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors text-sm sm:text-base">
-                  Learn More <ArrowRight className="h-4 w-4 ml-1" />
+                <button className="flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors text-xs sm:text-sm lg:text-base">
+                  Learn More <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 ml-1" />
                 </button>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Event Calendar CTA */}
-        <div className="bg-blue-600 rounded-2xl p-6 sm:p-8 text-white text-center">
+        {/* Event Calendar CTA - Mobile Optimized */}
+        <div className="bg-blue-600 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 text-white text-center">
           <div className="max-w-2xl mx-auto">
-            <Calendar className="h-12 w-12 sm:h-16 sm:w-16 mx-auto mb-4 text-blue-200" />
-            <h3 className="text-2xl sm:text-3xl font-bold mb-4">Never Miss an Event</h3>
-            <p className="text-lg sm:text-xl text-blue-100 mb-6">
+            <Calendar className="h-10 w-10 sm:h-12 sm:w-12 lg:h-16 lg:w-16 mx-auto mb-3 sm:mb-4 text-blue-200" />
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4">Never Miss an Event</h3>
+            <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-blue-100 mb-4 sm:mb-6 px-2">
               Subscribe to our church calendar and get notifications about upcoming events, services, and special programs.
             </p>
-            <button className="bg-white text-blue-600 px-6 sm:px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors">
+            <button className="bg-white text-blue-600 px-6 sm:px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors text-sm sm:text-base">
               Subscribe to Calendar
             </button>
           </div>

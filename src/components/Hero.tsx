@@ -14,7 +14,7 @@ const Hero = () => {
         <img 
           src="https://lakeviewagc.net/static/IMG-20231230-WA0003-dc2e7611634f3b2be3a3549e4f2fd69f.jpg"
           alt="Church background"
-          className="w-full h-full object-contain object-center bg-gray-900"
+          className="w-full h-full object-cover object-center bg-gray-900"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-purple-900/70 to-blue-800/80"></div>
       </div>

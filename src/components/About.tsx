@@ -300,7 +300,7 @@ const About = () => {
 
                 <div>
                   <img 
-                    src="https://images.pexels.com/photos/8828489/pexels-photo-8828489.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                    src="https://lakeviewagc.net/static/IMG-20220112-WA0004-280c4ea100c5acf58e3144c857632db3.jpg"
                     alt="Church history"
                     className="rounded-xl sm:rounded-2xl shadow-2xl w-full h-48 sm:h-64 lg:h-80 object-cover"
                   />

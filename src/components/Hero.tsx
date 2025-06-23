@@ -12,7 +12,7 @@ const Hero = () => {
       {/* Background with Overlay - Full image display */}
       <div className="absolute inset-0">
         <img 
-          src="https://lakeviewagc.net/static/theme-343febd46ce711e65729ad21a3e85cc0.jpg"
+          src="https://lakeviewagc.net/static/IMG-20231230-WA0003-dc2e7611634f3b2be3a3549e4f2fd69f.jpg"
           alt="Church background"
           className="w-full h-full object-contain object-center bg-gray-900"
         />

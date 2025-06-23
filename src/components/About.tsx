@@ -236,7 +236,7 @@ const About = () => {
                 <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 text-center">
                   <div className="w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4 sm:mb-6 rounded-full overflow-hidden shadow-lg">
                     <img 
-                      src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop"
+                      src="https://lakeviewagc.net/static/pstdelton-6fc330d13f664d8b2a0d6762a0ae69c3.jpg"
                       alt="Rev. Delton Orgeness"
                       className="w-full h-full object-cover"
                     />

@@ -202,7 +202,7 @@ const Pillars = () => {
         {/* Prayer Request Section */}
         <div className="mt-8 sm:mt-12 lg:mt-16">
           <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 text-white text-center shadow-2xl">
-            <Cross className={`h-6 w-6 sm:h-8 sm:w-8  'text-blue-600' : 'text-white'}`} />
+            <Cross className={`h-6 w-6 sm:h-8 sm:w-8  'text-blue-600' : 'text-white text-center'}`} />
             <h3 classNzzzzame="text-xl sm:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4">
               Let's Continue to Pray
             </h3>

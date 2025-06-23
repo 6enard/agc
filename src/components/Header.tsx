@@ -78,7 +78,7 @@ const Header = () => {
                 </a>
               )
             ))}
-            <button className="bg-blue-600 text-white px-4 py-2 rounded-full font-medium hover:bg-blue-700 transition-colors text-sm lg:px-6">
+            <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 text-sm lg:px-6 shadow-lg">
               Give
             </button>
           </div>
@@ -124,7 +124,7 @@ const Header = () => {
                   </a>
                 )
               ))}
-              <button className="w-full mt-4 bg-blue-600 text-white px-6 py-2 rounded-full font-medium hover:bg-blue-700 transition-colors">
+              <button className="w-full mt-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300">
                 Give
               </button>
             </div>

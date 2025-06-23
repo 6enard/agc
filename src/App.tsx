@@ -15,8 +15,8 @@ function HomePage() {
   return (
     <>
       <Hero />
-      <About />
       <Pillars />
+      <About />
       <Services />
       <Ministries />
       <Events />

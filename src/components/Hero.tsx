@@ -1,7 +1,63 @@
-import React from 'react';
-import { ChevronDown, Heart, Globe, Calendar, Clock } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ChevronDown, Heart, Globe, Calendar, Clock, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Hero = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  const carouselImages = [
+    {
+      url: 'https://lakeviewagc.net/static/IMG-20231230-WA0003-dc2e7611634f3b2be3a3549e4f2fd69f.jpg',
+      alt: 'Church congregation worship'
+    },
+    {
+      url: 'https://lakeviewagc.net/static/IMG-20231230-WA0006-d350447fd3a9565252ea7b39c4adf3ea.jpg',
+      alt: 'Church community gathering'
+    },
+    {
+      url: 'https://lakeviewagc.net/static/IMG-20231230-WA0011-6b7dcd064adbf5a15aff332e9f507de0.jpg',
+      alt: 'Church fellowship'
+    },
+    {
+      url: 'https://lakeviewagc.net/static/IMG-20231230-WA0005-dd1eb169af90fd3eedacafd170742f7b.jpg',
+      alt: 'Church ministry'
+    },
+    {
+      url: 'https://lakeviewagc.net/static/IMG-20231230-WA0004-3457e491f2c67ca1eb26f03dcbb83707.jpg',
+      alt: 'Church outreach'
+    },
+    {
+      url: 'https://lakeviewagc.net/static/IMG-20220112-WA0004-280c4ea100c5acf58e3144c857632db3.jpg',
+      alt: 'Church history'
+    }
+  ];
+
+  // Auto-play functionality
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [isAutoPlaying, carouselImages.length]);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
+    setIsAutoPlaying(false);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + carouselImages.length) % carouselImages.length);
+    setIsAutoPlaying(false);
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+    setIsAutoPlaying(false);
+  };
+
   const scrollToAbout = () => {
     const aboutSection = document.querySelector('#about');
     aboutSection?.scrollIntoView({ behavior: 'smooth' });
@@ -9,14 +65,56 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background with Overlay - Full image display */}
+      {/* Carousel Background */}
       <div className="absolute inset-0">
-        <img 
-          src="https://lakeviewagc.net/static/IMG-20231230-WA0003-dc2e7611634f3b2be3a3549e4f2fd69f.jpg"
-          alt="Church background"
-          className="w-full h-full object-cover object-center bg-gray-900"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-purple-900/70 to-blue-800/80"></div>
+        {carouselImages.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              index === currentSlide ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <img 
+              src={image.url}
+              alt={image.alt}
+              className="w-full h-full object-cover object-center bg-gray-900"
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-purple-900/70 to-blue-800/80"></div>
+          </div>
+        ))}
+      </div>
+
+      {/* Carousel Navigation Arrows */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-4 sm:left-6 lg:left-8 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 backdrop-blur-md hover:bg-white/30 text-white p-2 sm:p-3 rounded-full transition-all duration-300 hover:scale-110"
+        aria-label="Previous image"
+      >
+        <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
+      </button>
+
+      <button
+        onClick={nextSlide}
+        className="absolute right-4 sm:right-6 lg:right-8 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 backdrop-blur-md hover:bg-white/30 text-white p-2 sm:p-3 rounded-full transition-all duration-300 hover:scale-110"
+        aria-label="Next image"
+      >
+        <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
+      </button>
+
+      {/* Carousel Indicators */}
+      <div className="absolute bottom-20 sm:bottom-24 lg:bottom-32 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2 sm:space-x-3">
+        {carouselImages.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => goToSlide(index)}
+            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
+              index === currentSlide 
+                ? 'bg-white scale-125' 
+                : 'bg-white/50 hover:bg-white/75'
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
       </div>
 
       {/* Decorative Elements - Hidden on mobile for cleaner look */}
@@ -109,12 +207,19 @@ const Hero = () => {
             Watch Online
           </button>
         </div>
+
+        {/* Carousel Control Info */}
+        <div className="text-center mb-4 sm:mb-6">
+          <p className="text-white/70 text-xs sm:text-sm">
+            {currentSlide + 1} of {carouselImages.length} • {isAutoPlaying ? 'Auto-playing' : 'Paused'}
+          </p>
+        </div>
       </div>
 
       {/* Scroll Indicator - Hidden on small mobile */}
       <button 
         onClick={scrollToAbout}
-        className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 text-white/70 hover:text-white transition-colors group hidden sm:block"
+        className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 text-white/70 hover:text-white transition-colors group hidden sm:block z-20"
       >
         <div className="flex flex-col items-center">
           <span className="text-sm mb-2 opacity-0 group-hover:opacity-100 transition-opacity">Discover More</span>

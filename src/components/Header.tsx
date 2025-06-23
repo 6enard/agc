@@ -16,24 +16,21 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu when clicking outside
+  // Close mobile menu when route changes
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as Element;
-      if (isMenuOpen && !target.closest('nav')) {
-        setIsMenuOpen(false);
-      }
-    };
+    setIsMenuOpen(false);
+  }, [location]);
 
+  // Prevent body scroll when menu is open
+  useEffect(() => {
     if (isMenuOpen) {
-      document.addEventListener('click', handleClickOutside);
-      document.body.style.overflow = 'hidden'; // Prevent background scroll
+      document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
     }
-
+    
+    // Cleanup on unmount
     return () => {
-      document.removeEventListener('click', handleClickOutside);
       document.body.style.overflow = 'unset';
     };
   }, [isMenuOpen]);
@@ -50,9 +47,15 @@ const Header = () => {
   const handleNavClick = (href: string) => {
     setIsMenuOpen(false);
     if (href.startsWith('#') && isHomePage) {
-      const element = document.querySelector(href);
-      element?.scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => {
+        const element = document.querySelector(href);
+        element?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
     }
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
@@ -62,7 +65,7 @@ const Header = () => {
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 z-50">
+          <Link to="/" className="flex items-center space-x-2 z-50 relative">
             <Cross className={`h-6 w-6 sm:h-8 sm:w-8 ${isScrolled || !isHomePage ? 'text-blue-600' : 'text-white'}`} />
             <span className={`text-lg sm:text-xl font-bold ${isScrolled || !isHomePage ? 'text-gray-900' : 'text-white'}`}>
               Lakeview AGC
@@ -107,25 +110,41 @@ const Header = () => {
 
           {/* Mobile menu button */}
           <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className={`lg:hidden p-2 rounded-md z-50 ${isScrolled || !isHomePage ? 'text-gray-900' : 'text-white'}`}
+            onClick={toggleMenu}
+            className={`lg:hidden p-2 rounded-md z-50 relative transition-colors ${
+              isScrolled || !isHomePage || isMenuOpen ? 'text-gray-900' : 'text-white'
+            }`}
             aria-label="Toggle menu"
+            aria-expanded={isMenuOpen}
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
 
         {/* Mobile Navigation Overlay */}
-        {isMenuOpen && (
-          <div className="lg:hidden fixed inset-0 top-14 sm:top-16 bg-white z-40">
-            <div className="h-full overflow-y-auto">
-              <div className="px-4 py-6 space-y-4">
+        <div className={`lg:hidden fixed inset-0 top-14 sm:top-16 transition-all duration-300 ease-in-out ${
+          isMenuOpen 
+            ? 'opacity-100 visible' 
+            : 'opacity-0 invisible'
+        }`}>
+          {/* Backdrop */}
+          <div 
+            className="absolute inset-0 bg-black/20 backdrop-blur-sm"
+            onClick={() => setIsMenuOpen(false)}
+          />
+          
+          {/* Menu Panel */}
+          <div className={`relative bg-white shadow-2xl transform transition-transform duration-300 ease-in-out ${
+            isMenuOpen ? 'translate-y-0' : '-translate-y-full'
+          }`}>
+            <div className="h-screen overflow-y-auto">
+              <div className="px-4 py-6 space-y-2">
                 {navItems.map((item) => (
                   item.href.startsWith('/') ? (
                     <Link
                       key={item.name}
                       to={item.href}
-                      className="block px-4 py-3 text-gray-900 font-medium hover:text-blue-600 hover:bg-gray-50 rounded-lg text-lg"
+                      className="block px-4 py-3 text-gray-900 font-medium hover:text-blue-600 hover:bg-blue-50 rounded-lg text-lg transition-colors"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {item.name}
@@ -134,7 +153,7 @@ const Header = () => {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="block px-4 py-3 text-gray-900 font-medium hover:text-blue-600 hover:bg-gray-50 rounded-lg text-lg"
+                      className="block px-4 py-3 text-gray-900 font-medium hover:text-blue-600 hover:bg-blue-50 rounded-lg text-lg transition-colors"
                       onClick={(e) => {
                         if (item.href.startsWith('#') && isHomePage) {
                           e.preventDefault();
@@ -148,15 +167,18 @@ const Header = () => {
                     </a>
                   )
                 ))}
-                <div className="pt-4 border-t border-gray-200">
-                  <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 text-lg">
+                <div className="pt-4 border-t border-gray-200 mt-4">
+                  <button 
+                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 text-lg shadow-lg"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
                     Give
                   </button>
                 </div>
               </div>
             </div>
           </div>
-        )}
+        </div>
       </nav>
     </header>
   );

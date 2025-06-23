@@ -49,7 +49,7 @@ const Pillars = () => {
           description: 'Living out Galatians 5:6 in our daily Christian walk'
         }
       ],
-      image: 'https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop'
+      image: 'https://lakeviewagc.net/static/IMG-20231230-WA0005-dd1eb169af90fd3eedacafd170742f7b.jpg'
     },
     {
       id: 3,

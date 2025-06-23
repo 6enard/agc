@@ -13,7 +13,7 @@ const Hero = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(https://images.pexels.com/photos/8828489/pexels-photo-8828489.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop)'
+          backgroundImage: 'url(https://lakeviewagc.net/static/theme-343febd46ce711e65729ad21a3e85cc0.jpg)'
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-purple-900/60 to-blue-800/70"></div>

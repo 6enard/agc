@@ -258,7 +258,7 @@ const About = () => {
                 <div className="bg-gradient-to-br from-pink-50 to-pink-100 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 text-center">
                   <div className="w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4 sm:mb-6 rounded-full overflow-hidden shadow-lg">
                     <img 
-                      src="https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop"
+                      src="https://lakeviewagc.net/static/IMG-20200813-WA0000-ab080035506623eb1e0cc3548b437305.jpg"
                       alt="Pastor Rachel Ngetich"
                       className="w-full h-full object-cover"
                     />

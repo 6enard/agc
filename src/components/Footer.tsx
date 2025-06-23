@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cross, Facebook, Instagram, Youtube, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Instagram, Youtube, Mail, Phone, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -35,7 +35,11 @@ const Footer = () => {
           {/* Church Info */}
           <div className="md:col-span-2 lg:col-span-1">
             <Link to="/" className="flex items-center space-x-2 mb-4 sm:mb-6">
-              <Cross className="h-6 w-6 sm:h-8 sm:w-8 text-blue-400" />
+              <img 
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPPh6h0NhsLztJmfxO4jrg5YdoQPe6Flkvqg&s"
+                alt="AGC Lakeview Logo"
+                className="h-8 w-8 sm:h-10 sm:w-10 object-contain"
+              />
               <span className="text-lg sm:text-xl lg:text-2xl font-bold">Lakeview AGC</span>
             </Link>
             <p className="text-gray-300 mb-4 sm:mb-6 text-sm sm:text-base">

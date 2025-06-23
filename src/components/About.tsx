@@ -232,13 +232,21 @@ const About = () => {
             <div className="p-4 sm:p-6 lg:p-8 xl:p-12">
               <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 text-center">Pastorate</h3>
               
-              <div className="grid gap-6 sm:gap-8 lg:gap-12 max-w-4xl mx-auto md:grid-cols-2">
+              <div className="grid gap-6 sm:gap-8 lg:gap-12 max-w-6xl mx-auto md:grid-cols-2">
                 <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 text-center">
-                  <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 bg-blue-600 rounded-full mx-auto mb-4 sm:mb-6 flex items-center justify-center">
-                    <Users className="h-10 w-10 sm:h-12 sm:w-12 lg:h-16 lg:w-16 text-white" />
+                  <div className="w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4 sm:mb-6 rounded-full overflow-hidden shadow-lg">
+                    <img 
+                      src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop"
+                      alt="Rev. Delton Orgeness"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <h4 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-1 sm:mb-2">Rev. Delton Orgeness</h4>
                   <p className="text-blue-600 font-medium mb-3 sm:mb-4 text-sm sm:text-base">Senior Pastor</p>
+                  <p className="text-gray-600 text-xs sm:text-sm mb-4 sm:mb-6 leading-relaxed">
+                    Rev. Delton has been faithfully serving our congregation with wisdom, compassion, and dedication. 
+                    His heart for ministry and pastoral care has been instrumental in the growth and spiritual development of our church family.
+                  </p>
                   <div className="flex items-center justify-center text-gray-600">
                     <Phone className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
                     <a href="tel:0726907931" className="hover:text-blue-600 transition-colors text-xs sm:text-sm">
@@ -248,12 +256,20 @@ const About = () => {
                 </div>
 
                 <div className="bg-gradient-to-br from-pink-50 to-pink-100 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 text-center">
-                  <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 bg-pink-600 rounded-full mx-auto mb-4 sm:mb-6 flex items-center justify-center">
-                    <Heart className="h-10 w-10 sm:h-12 sm:w-12 lg:h-16 lg:w-16 text-white" />
+                  <div className="w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4 sm:mb-6 rounded-full overflow-hidden shadow-lg">
+                    <img 
+                      src="https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop"
+                      alt="Pastor Rachel Ngetich"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <h4 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-1 sm:mb-2">Pastor Rachel Ngetich</h4>
                   <p className="text-pink-600 font-medium mb-1 sm:mb-2 text-sm sm:text-base">Pastor</p>
                   <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4">(Children, Missions, Evangelism and Compassion)</p>
+                  <p className="text-gray-600 text-xs sm:text-sm mb-4 sm:mb-6 leading-relaxed">
+                    Pastor Rachel brings passion and energy to her ministry with children and missions. 
+                    Her heart for evangelism and compassion has touched countless lives both within our congregation and in the broader community.
+                  </p>
                   <div className="flex items-center justify-center text-gray-600">
                     <Phone className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
                     <a href="tel:0721406155" className="hover:text-pink-600 transition-colors text-xs sm:text-sm">
@@ -261,6 +277,16 @@ const About = () => {
                     </a>
                   </div>
                 </div>
+              </div>
+
+              {/* Additional pastoral team info */}
+              <div className="mt-8 sm:mt-12 bg-gray-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8">
+                <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6 text-center">Our Pastoral Team</h4>
+                <p className="text-sm sm:text-base text-gray-600 text-center max-w-3xl mx-auto leading-relaxed">
+                  Our pastoral team is committed to shepherding our congregation with love, wisdom, and biblical truth. 
+                  They are available for pastoral care, counseling, prayer, and spiritual guidance. Whether you're facing 
+                  challenges, celebrating victories, or seeking spiritual direction, our pastors are here to walk alongside you.
+                </p>
               </div>
             </div>
           )}

@@ -1,27 +1,68 @@
-import React from 'react';
-import { Heart, Users, BookOpen, Globe } from 'lucide-react';
+import React, { useState } from 'react';
+import { Heart, Users, BookOpen, Globe, ChevronUp, MapPin, Phone, Mail, Calendar, Clock } from 'lucide-react';
 
 const About = () => {
-  const values = [
+  const [activeTab, setActiveTab] = useState('who-we-are');
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 300);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const tabs = [
+    { id: 'who-we-are', label: 'Who We Are' },
+    { id: 'pastoral-staff', label: 'Pastoral Staff' },
+    { id: 'history', label: 'History' }
+  ];
+
+  const weeklyEvents = [
+    { day: 'Monday', event: 'Church Visitation', time: '5:30 PM - 6:30 PM' },
+    { day: 'Tuesday', event: 'YP BS @ Bontana Hotel', time: '5:30 PM - 6:30 PM' },
+    { day: 'Wednesday', event: 'Home Fellowship', time: '5:30 PM - 6:30 PM' },
+    { day: 'Thursday', event: 'Choir Practice', time: '5:30 PM - 6:30 PM' },
+    { day: 'Friday', event: 'Prayer Service', time: '5:30 PM - 6:30 PM' },
+    { day: 'Saturday', event: 'Choir Practice', time: '5:30 PM - 6:30 PM' }
+  ];
+
+  const departmentPrayers = [
+    { day: 'Monday', department: 'Compassion & Children' },
+    { day: 'Tuesday', department: 'Ladies & Men' },
+    { day: 'Wednesday', department: 'Missions & Evangelism' },
+    { day: 'Thursday', department: 'Youth Department & Academy' },
+    { day: 'Friday', department: 'Worship and Development' }
+  ];
+
+  const contacts = [
+    { name: 'Rev. Delton Orgeness', phone: '0726907931' },
+    { name: 'Pastor Rachel Ng\'etich', phone: '0721406155' },
+    { name: 'Harry Yegon', phone: '0726216029' },
+    { name: 'Samuel Maina', phone: '0724754423' },
+    { name: 'Oswald Midamba', phone: '072358870' }
+  ];
+
+  const milestones = [
     {
-      icon: Heart,
-      title: 'Love',
-      description: 'We believe in showing Christ\'s love through our actions and words to everyone we meet.'
+      date: 'March 26th, 1978',
+      title: 'First Service',
+      description: 'First service conducted in a rented room in Afraha Social Hall, initially called Nakuru Town Church.'
     },
     {
-      icon: Users,
-      title: 'Community',
-      description: 'Building authentic relationships and supporting one another in faith and life.'
+      date: '21st July, 1985',
+      title: 'New Sanctuary',
+      description: 'Relocated to first owned sanctuary in Section 58 facing Lake Nakuru, christened as \'Lakeview Africa Gospel Church\'. Unveiled by President Daniel Arap Moi.'
     },
     {
-      icon: BookOpen,
-      title: 'Truth',
-      description: 'Committed to teaching and living according to God\'s Word with integrity and grace.'
-    },
-    {
-      icon: Globe,
-      title: 'Mission',
-      description: 'Reaching our community and the world with the transformative message of Jesus Christ.'
+      date: '6th October, 2002',
+      title: 'Expanded Sanctuary',
+      description: 'Launched larger sanctuary to accommodate growing congregation, again inaugurated by President Daniel Arap Moi.'
     }
   ];
 
@@ -29,55 +70,311 @@ const About = () => {
     <section id="about" className="py-12 sm:py-16 lg:py-20 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">About Lakeview Assembly</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">About Lakeview Africa Gospel Church</h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-            For over 50 years, we've been a beacon of hope and faith in our community, 
-            dedicated to helping people discover their purpose and grow in their relationship with God.
+            Section 58, Nakuru - A house of prayer for all people, spreading the gospel of Jesus Christ across Nakuru County and beyond.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-16 lg:mb-20">
-          <div className="order-2 lg:order-1">
-            <img 
-              src="https://images.pexels.com/photos/8468470/pexels-photo-8468470.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
-              alt="Church community"
-              className="rounded-2xl shadow-2xl w-full h-64 sm:h-80 lg:h-96 object-cover"
-            />
-          </div>
-          <div className="order-1 lg:order-2 px-4 lg:px-0">
-            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">Our Story</h3>
-            <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6">
-              Founded in 1970, Lakeview Assembly of God began as a small gathering of believers 
-              with a big vision: to create a church where everyone feels welcomed, loved, and 
-              empowered to make a difference in the world.
-            </p>
-            <p className="text-base sm:text-lg text-gray-600 mb-6">
-              Today, we're a thriving community of families, singles, young adults, and seniors 
-              who come together to worship, learn, serve, and support one another. Our doors are 
-              open to people from all walks of life, regardless of where they are in their spiritual journey.
-            </p>
-            <button className="bg-blue-600 text-white px-6 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors">
-              Learn More About Us
-            </button>
-          </div>
-        </div>
-
-        {/* Values */}
-        <div>
-          <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-8 sm:mb-12 px-4">Our Core Values</h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            {values.map((value, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow text-center mx-4 sm:mx-0">
-                <div className="bg-blue-100 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <value.icon className="h-6 w-6 sm:h-8 sm:w-8 text-blue-600" />
-                </div>
-                <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-3">{value.title}</h4>
-                <p className="text-sm sm:text-base text-gray-600">{value.description}</p>
-              </div>
+        {/* Tab Navigation */}
+        <div className="flex flex-wrap justify-center mb-8 sm:mb-12">
+          <div className="bg-white rounded-full p-1 shadow-lg">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium transition-all text-sm sm:text-base ${
+                  activeTab === tab.id
+                    ? 'bg-blue-600 text-white shadow-md'
+                    : 'text-gray-600 hover:text-blue-600'
+                }`}
+              >
+                {tab.label}
+              </button>
             ))}
           </div>
         </div>
+
+        {/* Tab Content */}
+        <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+          {/* Who We Are Tab */}
+          {activeTab === 'who-we-are' && (
+            <div className="p-6 sm:p-8 lg:p-12">
+              <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-12">
+                <div>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">Who We Are</h3>
+                  <p className="text-base sm:text-lg text-gray-600 mb-6 leading-relaxed">
+                    Lakeview Africa Gospel Church is a christian based church situated in Nakuru, a house of prayer for all people, 
+                    with a mission of spreading the gospel of Jesus Christ to all people across Nakuru County and beyond. 
+                    We are part of a large and diverse Africa Gospel Church congregation in Kenya.
+                  </p>
+
+                  <div className="mb-8">
+                    <h4 className="text-xl font-bold text-gray-900 mb-4">Our Mission</h4>
+                    <p className="text-gray-600 mb-4">
+                      To fulfill the Great commandment of the Lord Jesus Christ according to the Great Plan.
+                    </p>
+                    <div className="bg-blue-50 p-4 rounded-lg">
+                      <p className="text-blue-800 font-medium text-sm">
+                        Mark 12:30-31 • Matthew 28:19-20 • Acts 1:8
+                      </p>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="text-xl font-bold text-gray-900 mb-4">Our Purpose</h4>
+                    <div className="space-y-4">
+                      <div className="flex items-start">
+                        <div className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5 flex-shrink-0">1</div>
+                        <p className="text-gray-600 text-sm sm:text-base">
+                          To proclaim the Gospel of Jesus Christ to all who are and who are saved.
+                        </p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5 flex-shrink-0">2</div>
+                        <p className="text-gray-600 text-sm sm:text-base">
+                          To nurture the spiritual, physical and mental life of its members through preaching the word of God, Prayers, fellowship and communion.
+                        </p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5 flex-shrink-0">3</div>
+                        <p className="text-gray-600 text-sm sm:text-base">
+                          To enable its members to identify, develop and use their spiritual gifts to serve both in and out of church.
+                        </p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5 flex-shrink-0">4</div>
+                        <p className="text-gray-600 text-sm sm:text-base">
+                          To witness through word and deed, undertake projects and programmes that lessen and free the people from the bondage of sin, poverty and disease.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <img 
+                    src="https://images.pexels.com/photos/8468470/pexels-photo-8468470.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                    alt="Church community"
+                    className="rounded-2xl shadow-2xl w-full h-64 sm:h-80 lg:h-96 object-cover mb-8"
+                  />
+
+                  {/* Weekly Events */}
+                  <div className="bg-gray-50 rounded-xl p-6">
+                    <h4 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                      <Calendar className="h-5 w-5 mr-2 text-blue-600" />
+                      Weekly Events (5:30 PM - 6:30 PM)
+                    </h4>
+                    <div className="space-y-2">
+                      {weeklyEvents.map((event, index) => (
+                        <div key={index} className="flex justify-between items-center py-1">
+                          <span className="font-medium text-gray-900 text-sm">{event.day}</span>
+                          <span className="text-gray-600 text-sm">{event.event}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Department Prayer Days */}
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="bg-blue-50 rounded-xl p-6">
+                  <h4 className="text-lg font-bold text-gray-900 mb-4">Department Prayer Days</h4>
+                  <div className="space-y-2">
+                    {departmentPrayers.map((prayer, index) => (
+                      <div key={index} className="flex justify-between items-center py-1">
+                        <span className="font-medium text-blue-900 text-sm">{prayer.day}</span>
+                        <span className="text-blue-700 text-sm">{prayer.department}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="bg-green-50 rounded-xl p-6">
+                  <h4 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                    <Phone className="h-5 w-5 mr-2 text-green-600" />
+                    Quick Contacts
+                  </h4>
+                  <div className="space-y-3">
+                    {contacts.map((contact, index) => (
+                      <div key={index} className="flex justify-between items-center">
+                        <span className="font-medium text-gray-900 text-sm">{contact.name}</span>
+                        <a href={`tel:${contact.phone}`} className="text-green-600 hover:text-green-700 text-sm">
+                          {contact.phone}
+                        </a>
+                      </div>
+                    ))}
+                    <div className="border-t border-green-200 pt-3 mt-3">
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="font-medium text-gray-900 text-sm">Church Office</span>
+                        <a href="tel:0797438190" className="text-green-600 hover:text-green-700 text-sm">
+                          0797438190
+                        </a>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="font-medium text-gray-900 text-sm">Email</span>
+                        <a href="mailto:info@lakeviewagc.net" className="text-green-600 hover:text-green-700 text-sm">
+                          info@lakeviewagc.net
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Pastoral Staff Tab */}
+          {activeTab === 'pastoral-staff' && (
+            <div className="p-6 sm:p-8 lg:p-12">
+              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 text-center">Pastorate</h3>
+              
+              <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto">
+                <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 sm:p-8 text-center">
+                  <div className="w-24 h-24 sm:w-32 sm:h-32 bg-blue-600 rounded-full mx-auto mb-6 flex items-center justify-center">
+                    <Users className="h-12 w-12 sm:h-16 sm:w-16 text-white" />
+                  </div>
+                  <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Rev. Delton Orgeness</h4>
+                  <p className="text-blue-600 font-medium mb-4">Senior Pastor</p>
+                  <div className="flex items-center justify-center text-gray-600">
+                    <Phone className="h-4 w-4 mr-2" />
+                    <a href="tel:0726907931" className="hover:text-blue-600 transition-colors">
+                      0726907931
+                    </a>
+                  </div>
+                </div>
+
+                <div className="bg-gradient-to-br from-pink-50 to-pink-100 rounded-2xl p-6 sm:p-8 text-center">
+                  <div className="w-24 h-24 sm:w-32 sm:h-32 bg-pink-600 rounded-full mx-auto mb-6 flex items-center justify-center">
+                    <Heart className="h-12 w-12 sm:h-16 sm:w-16 text-white" />
+                  </div>
+                  <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Pastor Rachel Ngetich</h4>
+                  <p className="text-pink-600 font-medium mb-2">Pastor</p>
+                  <p className="text-gray-600 text-sm mb-4">(Children, Missions, Evangelism and Compassion)</p>
+                  <div className="flex items-center justify-center text-gray-600">
+                    <Phone className="h-4 w-4 mr-2" />
+                    <a href="tel:0721406155" className="hover:text-pink-600 transition-colors">
+                      0721406155
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* History Tab */}
+          {activeTab === 'history' && (
+            <div className="p-6 sm:p-8 lg:p-12">
+              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 text-center">Brief History of Lakeview AGC</h3>
+              
+              <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-12">
+                <div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-4">Our Journey</h4>
+                  <p className="text-base sm:text-lg text-gray-600 mb-6 leading-relaxed">
+                    Lakeview Africa Gospel Church has been in existence for the last 47 years with the sole purpose of 
+                    sharing the light of the gospel of the Lord Jesus in Nakuru and beyond. It is one of the 1,600 
+                    congregations of Africa Gospel Church in Kenya.
+                  </p>
+
+                  <div className="mb-8">
+                    <h5 className="text-lg font-bold text-gray-900 mb-3">Leadership</h5>
+                    <p className="text-gray-600 mb-4 text-sm sm:text-base">
+                      Planted by Isaac and Susana Saoshiro missionaries with IGM (Immanuel General Mission) from Japan, 
+                      Lakeview AGC is now run fully by local leadership, giving members a sense of ownership through 
+                      the Local church council (LCC).
+                    </p>
+                  </div>
+
+                  <div>
+                    <h5 className="text-lg font-bold text-gray-900 mb-3">Education</h5>
+                    <p className="text-gray-600 text-sm sm:text-base">
+                      The church has established Lakeview Academy, a Christian based academic institution, offering 
+                      quality education for kindergarten students and promoting God fearing generation imparted with 
+                      spiritual values.
+                    </p>
+                  </div>
+                </div>
+
+                <div>
+                  <img 
+                    src="https://images.pexels.com/photos/8828489/pexels-photo-8828489.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                    alt="Church history"
+                    className="rounded-2xl shadow-2xl w-full h-64 sm:h-80 object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* Timeline */}
+              <div className="mb-12">
+                <h4 className="text-xl font-bold text-gray-900 mb-8 text-center">Key Milestones</h4>
+                <div className="space-y-8">
+                  {milestones.map((milestone, index) => (
+                    <div key={index} className="flex items-start">
+                      <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4 mt-1 flex-shrink-0">
+                        {index + 1}
+                      </div>
+                      <div className="flex-1">
+                        <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+                          <div className="text-blue-600 font-bold text-sm mb-2">{milestone.date}</div>
+                          <h5 className="text-lg font-bold text-gray-900 mb-3">{milestone.title}</h5>
+                          <p className="text-gray-600 text-sm sm:text-base">{milestone.description}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Mission Statement */}
+              <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-6 sm:p-8 text-white text-center">
+                <Globe className="h-12 w-12 sm:h-16 sm:w-16 mx-auto mb-4 text-blue-200" />
+                <p className="text-lg sm:text-xl font-medium">
+                  The church continues to evangelize the gospel of Jesus Christ all over Nakuru County both as a whole church 
+                  and outside through our devoted missions and evangelism ministries. The church has ministries committed to 
+                  spreading the gospel through fellowship and companionship.
+                </p>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Map Section */}
+        <div className="mt-12 sm:mt-16 bg-white rounded-2xl shadow-lg overflow-hidden">
+          <div className="p-6 sm:p-8">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 flex items-center">
+              <MapPin className="h-6 w-6 mr-2 text-blue-600" />
+              Find Us Here
+            </h3>
+            <p className="text-sm sm:text-base text-gray-600 mb-6">
+              Located in Section 58, Nakuru, facing Lake Nakuru. Our church is easily accessible with ample parking available.
+            </p>
+          </div>
+          <div className="w-full h-64 sm:h-80 lg:h-96">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.767972921741!2d36.091611674040266!3d-0.2878393353479355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18299274ae85cb9f%3A0x371b0a1059a0ea54!2sLakeview%20Africa%20Gospel%20Church!5e0!3m2!1sen!2ske!4v1750641375712!5m2!1sen!2ske" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-full"
+            />
+          </div>
+        </div>
       </div>
+
+      {/* Scroll to Top Button */}
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 z-50 hover:scale-110"
+          aria-label="Scroll to top"
+        >
+          <ChevronUp className="h-6 w-6" />
+        </button>
+      )}
     </section>
   );
 };

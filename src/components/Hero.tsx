@@ -9,16 +9,14 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background with Overlay - Optimized for 1600x666 */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: 'url(https://lakeviewagc.net/static/theme-343febd46ce711e65729ad21a3e85cc0.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center center'
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/75 via-purple-900/65 to-blue-800/75"></div>
+      {/* Background with Overlay - Optimized for all devices */}
+      <div className="absolute inset-0">
+        <img 
+          src="https://lakeviewagc.net/static/theme-343febd46ce711e65729ad21a3e85cc0.jpg"
+          alt="Church background"
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-purple-900/70 to-blue-800/80"></div>
       </div>
 
       {/* Decorative Elements */}

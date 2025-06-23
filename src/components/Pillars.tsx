@@ -73,7 +73,7 @@ const Pillars = () => {
           description: 'Founded by Rev Isaac Saoshiro, continuing the mission legacy'
         }
       ],
-      image: 'https://images.pexels.com/photos/8828489/pexels-photo-8828489.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop'
+      image: 'https://lakeviewagc.net/static/IMG-20231230-WA0004-3457e491f2c67ca1eb26f03dcbb83707.jpg'
     }
   ];
 

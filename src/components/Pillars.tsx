@@ -25,7 +25,7 @@ const Pillars = () => {
           description: 'Connect with fellow believers in our vibrant church community'
         }
       ],
-      image: 'https://images.pexels.com/photos/8468470/pexels-photo-8468470.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop'
+      image: 'https://lakeviewagc.net/static/IMG-20231230-WA0011-6b7dcd064adbf5a15aff332e9f507de0.jpg'
     },
     {
       id: 2,

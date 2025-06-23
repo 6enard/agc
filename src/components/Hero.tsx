@@ -9,12 +9,12 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background with Overlay - Optimized for all devices */}
+      {/* Background with Overlay - Full image display */}
       <div className="absolute inset-0">
         <img 
           src="https://lakeviewagc.net/static/theme-343febd46ce711e65729ad21a3e85cc0.jpg"
           alt="Church background"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-contain object-center bg-gray-900"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-purple-900/70 to-blue-800/80"></div>
       </div>

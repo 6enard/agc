@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, Heart, Globe, Handshake, MapPin, Pray, Church } from 'lucide-react';
+import { Users, Heart, Globe, Handshake, MapPin, SprayCan as Pray, Church } from 'lucide-react';
 
 const Pillars = () => {
   const pillars = [

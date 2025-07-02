@@ -36,7 +36,7 @@ const Footer = () => {
           <div className="md:col-span-2 lg:col-span-1">
             <Link to="/" className="flex items-center space-x-2 mb-4 sm:mb-6">
               <img 
-                src="https://sdmntprwestus3.oaiusercontent.com/files/00000000-97c0-61fd-9fdf-fd411c678b11/raw?se=2025-07-02T16%3A20%3A51Z&sp=r&sv=2024-08-04&sr=b&scid=2296a90f-e63a-5b42-824a-4736816c2ec9&skoid=24a7dec3-38fc-4904-b888-8abe0855c442&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-01T17%3A11%3A53Z&ske=2025-07-02T17%3A11%3A53Z&sks=b&skv=2024-08-04&sig=lieYmqDSvceRMOhfUAUgoNcTFMHpN/4xJD3Qg0xZdgs%3D"
+                src="/AGCLOGO.png"
                 alt="Lakeview AGC Logo"
                 className="h-8 w-8 sm:h-10 sm:w-10 object-contain"
               />

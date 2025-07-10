@@ -103,7 +103,6 @@ const Events = () => {
                 </div>
                 
                 <button className="flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors text-xs sm:text-sm lg:text-base">
-                <button className="flex items-center text-purple-600 font-medium hover:text-purple-700 transition-colors text-xs sm:text-sm lg:text-base">
                   Learn More <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 ml-1" />
                 </button>
               </div>
@@ -112,7 +111,6 @@ const Events = () => {
         </div>
 
         {/* Event Calendar CTA - Mobile Optimized */}
-        <div className="bg-blue-600 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 text-white text-center">
         <div className="bg-gradient-to-r from-purple-600 to-red-600 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 text-white text-center">
           <div className="max-w-2xl mx-auto">
             <Calendar className="h-10 w-10 sm:h-12 sm:w-12 lg:h-16 lg:w-16 mx-auto mb-3 sm:mb-4 text-white/80" />
@@ -126,9 +124,6 @@ const Events = () => {
           </div>
         </div>
       </div>
-    )
-    )
-    }
     </section>
   );
 };

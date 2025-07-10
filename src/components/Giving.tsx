@@ -28,18 +28,6 @@ const Giving = () => {
       color: 'bg-red-100',
       iconColor: 'text-red-600'
     },
-    {
-      icon: CreditCard,
-      title: 'Online Giving',
-      description: 'Secure online donations (Coming Soon)',
-      details: [
-        'Credit/Debit Cards accepted',
-        'Secure payment processing',
-        'Recurring donations available'
-      ],
-      color: 'bg-purple-100',
-      iconColor: 'text-purple-600'
-    }
   ];
 
   const givingAreas = [
@@ -109,7 +97,7 @@ const Giving = () => {
           <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 text-center">
             Ways to Give
           </h3>
-          <div className="grid gap-6 sm:gap-8 lg:grid-cols-3">
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-2 max-w-4xl mx-auto">
             {givingOptions.map((option, index) => (
               <div key={index} className="bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-xl border border-white/50">
                 <div className="flex items-center mb-4 sm:mb-6">
@@ -131,14 +119,6 @@ const Giving = () => {
                     </div>
                   ))}
                 </div>
-
-                {index === 2 && (
-                  <div className="mt-4 sm:mt-6">
-                    <span className="inline-flex items-center bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs sm:text-sm font-medium">
-                      Coming Soon
-                    </span>
-                  </div>
-                )}
               </div>
             ))}
           </div>

@@ -7,9 +7,9 @@ const Pillars = () => {
       id: 1,
       title: 'Fellowship',
       icon: Users,
-      color: 'from-blue-600 to-blue-700',
-      accentColor: 'bg-blue-100',
-      iconColor: 'text-blue-600',
+      color: 'from-purple-600 to-purple-700',
+      accentColor: 'bg-purple-100',
+      iconColor: 'text-purple-600',
       description: 'At Lakeview AGC, we proclaim the Gospel of Jesus Christ to all people through preaching the word of God, Prayers, fellowship and communion.',
       features: [
         {
@@ -31,9 +31,9 @@ const Pillars = () => {
       id: 2,
       title: 'Companionship',
       icon: Heart,
-      color: 'from-purple-600 to-purple-700',
-      accentColor: 'bg-purple-100',
-      iconColor: 'text-purple-600',
+      color: 'from-red-600 to-red-700',
+      accentColor: 'bg-red-100',
+      iconColor: 'text-red-600',
       description: 'We believe in companionship as a family bound by the body of Jesus Christ. We endeavor, through word and deed, to witness and undertake projects and programmes that lessen and free people from the bondage of sin, poverty and disease and lead a Christian life in a Christian environment that inculcate the fruits of holy spirit as envisaged in Galatians 5:6.',
       features: [
         {
@@ -55,9 +55,9 @@ const Pillars = () => {
       id: 3,
       title: 'Missions & Partnerships',
       icon: Globe,
-      color: 'from-green-600 to-green-700',
-      accentColor: 'bg-green-100',
-      iconColor: 'text-green-600',
+      color: 'from-purple-600 to-red-600',
+      accentColor: 'bg-purple-100',
+      iconColor: 'text-purple-600',
       description: 'We were honoured to have Rev Isaac Saoshiro, the founder of Lakeview AGC. We thank God for His blessings and for allowing us to reach the people of Turkana and Kakuma refugee camps.',
       features: [
         {
@@ -88,7 +88,7 @@ const Pillars = () => {
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
             The Three Pillars of
-            <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-purple-600 via-red-600 to-purple-600 bg-clip-text text-transparent">
               Lakeview AGC
             </span>
           </h2>
@@ -179,7 +179,7 @@ const Pillars = () => {
         <div className="mt-12 sm:mt-16 lg:mt-20 text-center">
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 shadow-xl border border-white/50 max-w-4xl mx-auto">
             <div className="flex items-center justify-center mb-4 sm:mb-6">
-              <Handshake className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-blue-600 mr-3 sm:mr-4" />
+              <Handshake className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-purple-600 mr-3 sm:mr-4" />
               <h3 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900">
                 Join Our Mission
               </h3>
@@ -189,10 +189,10 @@ const Pillars = () => {
               companionship, or missions, there's a place for you to grow and serve.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-              <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 text-sm sm:text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+              <button className="bg-gradient-to-r from-purple-600 to-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium hover:from-purple-700 hover:to-red-700 transition-all duration-300 text-sm sm:text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                 Get Involved Today
               </button>
-              <button className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium transition-all duration-300 text-sm sm:text-base">
+              <button className="border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium transition-all duration-300 text-sm sm:text-base">
                 Learn More About Us
               </button>
             </div>
@@ -201,12 +201,12 @@ const Pillars = () => {
 
         {/* Prayer Request Section */}
         <div className="mt-8 sm:mt-12 lg:mt-16">
-          <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 text-white text-center shadow-2xl">
-            <Cross className={`h-6 w-6 sm:h-8 sm:w-8  'text-blue-600' : 'text-white text-center'}`} />
-            <h3 classNzzzzame="text-xl sm:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4">
+          <div className="bg-gradient-to-r from-purple-600 via-red-600 to-purple-600 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 text-white text-center shadow-2xl">
+            <Cross className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 mx-auto mb-4 text-white" />
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4">
               Let's Continue to Pray
             </h3>
-            <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-blue-100 mb-4 sm:mb-6 max-w-2xl mx-auto px-2">
+            <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-white/80 mb-4 sm:mb-6 max-w-2xl mx-auto px-2">
               "Let's continue to pray for them" - Join us in lifting up our mission partners, 
               church plants, and all those we serve around the world.
             </p>

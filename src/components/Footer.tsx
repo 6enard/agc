@@ -101,12 +101,13 @@ const Footer = () => {
             <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
               <div>
                 <div className="text-blue-400 font-medium text-xs sm:text-sm lg:text-base">Sunday Services</div>
+                <div className="text-purple-400 font-medium text-xs sm:text-sm lg:text-base">Sunday Services</div>
                 <div className="text-gray-300 text-xs sm:text-sm">8:30 AM - First Service</div>
                 <div className="text-gray-300 text-xs sm:text-sm">10:00 AM - Second Service</div>
                 <div className="text-gray-300 text-xs sm:text-sm">9:30 AM - Youth & Sunday School</div>
               </div>
               <div>
-                <div className="text-blue-400 font-medium text-xs sm:text-sm lg:text-base">Weekly Events</div>
+                <div className="text-red-400 font-medium text-xs sm:text-sm lg:text-base">Weekly Events</div>
                 <div className="text-gray-300 text-xs sm:text-sm">Mon-Sat: 5:30 PM - 6:30 PM</div>
               </div>
             </div>
@@ -117,7 +118,7 @@ const Footer = () => {
                 <a
                   key={index}
                   href={social.href}
-                  className="bg-gray-800 p-2 rounded-full hover:bg-blue-600 transition-colors"
+                  className="bg-gray-800 p-2 rounded-full hover:bg-gradient-to-r hover:from-purple-600 hover:to-red-600 transition-colors"
                   aria-label={social.label}
                 >
                   <social.icon className="h-3 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5" />
@@ -134,12 +135,13 @@ const Footer = () => {
           </div>
           <div className="flex flex-wrap justify-center md:justify-end space-x-3 sm:space-x-4 lg:space-x-6 text-xs sm:text-sm">
             <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+            <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+            <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">
               Terms of Service
             </a>
-            <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+            <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">
               Accessibility
             </a>
           </div>

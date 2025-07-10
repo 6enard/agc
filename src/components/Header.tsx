@@ -40,7 +40,9 @@ const Header = () => {
     { name: 'About', href: isHomePage ? '#about' : '/#about' },
     { name: 'Services', href: isHomePage ? '#services' : '/#services' },
     { name: 'Ministries', href: isHomePage ? '#ministries' : '/#ministries' },
+    { name: 'Academy', href: isHomePage ? '#academy' : '/#academy' },
     { name: 'Events', href: isHomePage ? '#events' : '/#events' },
+    { name: 'Give', href: isHomePage ? '#giving' : '/#giving' },
     { name: 'Contact', href: isHomePage ? '#contact' : '/#contact' }
   ];
 
@@ -107,7 +109,7 @@ const Header = () => {
                 </a>
               )
             ))}
-            <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 xl:px-6 py-2 rounded-full font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 text-sm xl:text-base shadow-lg">
+            <button className="bg-gradient-to-r from-purple-600 to-red-600 text-white px-4 xl:px-6 py-2 rounded-full font-medium hover:from-purple-700 hover:to-red-700 transition-all duration-300 text-sm xl:text-base shadow-lg">
               Give
             </button>
           </div>
@@ -172,12 +174,13 @@ const Header = () => {
                   )
                 ))}
                 <div className="pt-4 border-t border-gray-200 mt-4">
-                  <button 
-                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 text-lg shadow-lg"
+                  <a
+                    href={isHomePage ? '#giving' : '/#giving'}
+                    className="block w-full bg-gradient-to-r from-purple-600 to-red-600 text-white px-6 py-3 rounded-full font-medium hover:from-purple-700 hover:to-red-700 transition-all duration-300 text-lg shadow-lg text-center"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Give
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>

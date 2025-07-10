@@ -18,7 +18,7 @@ const Ministries = () => {
       title: 'Women\'s Ministry',
       description: 'Empowering women through Bible study, fellowship, and service opportunities.',
       age: 'All Ages',
-      color: 'bg-pink-500'
+      color: 'bg-red-500'
     },
     {
       id: 'childrens',
@@ -26,7 +26,7 @@ const Ministries = () => {
       title: 'Children\'s Ministry',
       description: 'Fun, safe, and educational programs that help kids learn about God\'s love.',
       age: 'Ages 0-12',
-      color: 'bg-green-500'
+      color: 'bg-purple-500'
     },
     {
       id: 'worship',
@@ -34,7 +34,7 @@ const Ministries = () => {
       title: 'Worship Ministry',
       description: 'Using music and arts to lead others in worship and glorify God.',
       age: 'All Ages',
-      color: 'bg-blue-500'
+      color: 'bg-red-500'
     },
     {
       id: 'outreach',
@@ -42,7 +42,7 @@ const Ministries = () => {
       title: 'Community Outreach',
       description: 'Serving our neighbors through food programs, community events, and support services.',
       age: 'All Ages',
-      color: 'bg-orange-500'
+      color: 'bg-purple-500'
     },
     {
       id: 'small-groups',
@@ -50,7 +50,7 @@ const Ministries = () => {
       title: 'Small Groups',
       description: 'Intimate gatherings for deeper relationships, prayer, and Bible study.',
       age: 'All Ages',
-      color: 'bg-teal-500'
+      color: 'bg-red-500'
     }
   ];
 
@@ -97,10 +97,10 @@ const Ministries = () => {
               that match your interests and schedule.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-              <button className="bg-blue-600 text-white px-6 sm:px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors text-sm sm:text-base">
+              <button className="bg-purple-600 text-white px-6 sm:px-8 py-3 rounded-full font-medium hover:bg-purple-700 transition-colors text-sm sm:text-base">
                 Volunteer Today
               </button>
-              <button className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 sm:px-8 py-3 rounded-full font-medium transition-colors text-sm sm:text-base">
+              <button className="border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white px-6 sm:px-8 py-3 rounded-full font-medium transition-colors text-sm sm:text-base">
                 View All Ministries
               </button>
             </div>

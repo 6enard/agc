@@ -132,10 +132,10 @@ const Hero = () => {
 
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
           <span className="block mb-1 sm:mb-2">Welcome to</span>
-          <span className="block bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 bg-clip-text text-transparent">
+          <span className="block bg-gradient-to-r from-purple-300 via-red-300 to-purple-300 bg-clip-text text-transparent">
             Lakeview Africa
           </span>
-          <span className="block text-blue-200">Gospel Church</span>
+          <span className="block text-purple-200">Gospel Church</span>
         </h1>
 
         <div className="max-w-4xl mx-auto mb-6 sm:mb-8">
@@ -150,7 +150,7 @@ const Hero = () => {
             We are bound by our vision of sharing the light of the gospel of the Lord Jesus in Nakuru and beyond.
           </p>
           
-          <div className="flex items-center justify-center text-pink-300 text-base sm:text-lg md:text-xl font-medium mb-6 sm:mb-8">
+          <div className="flex items-center justify-center text-red-300 text-base sm:text-lg md:text-xl font-medium mb-6 sm:mb-8">
             <Globe className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
             <span className="text-center">Celebrating and sharing the love of God</span>
           </div>
@@ -159,7 +159,7 @@ const Hero = () => {
         {/* Theme of the Year 2025 */}
         <div className="bg-white/10 backdrop-blur-lg rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 mb-6 sm:mb-8 border border-white/20 shadow-2xl max-w-4xl mx-auto">
           <div className="text-center mb-4 sm:mb-6">
-            <div className="inline-flex items-center bg-gradient-to-r from-yellow-400 to-orange-400 text-gray-900 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-bold mb-3 sm:mb-4">
+            <div className="inline-flex items-center bg-gradient-to-r from-purple-400 to-red-400 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-bold mb-3 sm:mb-4">
               <Calendar className="h-3 w-3 sm:h-4 sm:w-4 mr-1.5 sm:mr-2" />
               Theme of the Year - 2025
             </div>
@@ -167,7 +167,7 @@ const Hero = () => {
               GATHER GROW TRANSFORM
             </h2>
             <div className="bg-white/10 rounded-xl sm:rounded-2xl p-3 sm:p-4 border border-white/20">
-              <p className="text-blue-200 font-medium text-sm sm:text-lg md:text-xl mb-1 sm:mb-2">Scripture of the Year - 2025</p>
+              <p className="text-purple-200 font-medium text-sm sm:text-lg md:text-xl mb-1 sm:mb-2">Scripture of the Year - 2025</p>
               <p className="text-white font-bold text-lg sm:text-xl md:text-2xl">Acts 2:42-47</p>
             </div>
           </div>
@@ -181,15 +181,15 @@ const Hero = () => {
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
             <div className="bg-white/10 rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 border border-white/20 text-center">
-              <div className="text-lg sm:text-xl md:text-2xl font-bold text-blue-300 mb-1 sm:mb-2">8:30 - 9:45 AM</div>
+              <div className="text-lg sm:text-xl md:text-2xl font-bold text-purple-300 mb-1 sm:mb-2">8:30 - 9:45 AM</div>
               <div className="text-sm sm:text-base text-gray-200 font-medium">First Service</div>
             </div>
             <div className="bg-white/10 rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 border border-white/20 text-center">
-              <div className="text-lg sm:text-xl md:text-2xl font-bold text-purple-300 mb-1 sm:mb-2">10:00 - 11:30 AM</div>
+              <div className="text-lg sm:text-xl md:text-2xl font-bold text-red-300 mb-1 sm:mb-2">10:00 - 11:30 AM</div>
               <div className="text-sm sm:text-base text-gray-200 font-medium">Second Service</div>
             </div>
             <div className="bg-white/10 rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 border border-white/20 text-center">
-              <div className="text-lg sm:text-xl md:text-2xl font-bold text-pink-300 mb-1 sm:mb-2">9:30 - 11:30 AM</div>
+              <div className="text-lg sm:text-xl md:text-2xl font-bold text-purple-300 mb-1 sm:mb-2">9:30 - 11:30 AM</div>
               <div className="text-sm sm:text-base text-gray-200 font-medium">Youth Service &</div>
               <div className="text-sm sm:text-base text-gray-200 font-medium">Sunday School</div>
             </div>
@@ -197,7 +197,7 @@ const Hero = () => {
         </div>
         
         <div className="flex flex-col gap-3 sm:gap-4 mb-8 sm:mb-12 px-2">
-          <button className="group w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+          <button className="group w-full bg-gradient-to-r from-purple-600 to-red-600 hover:from-purple-700 hover:to-red-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
             <span className="flex items-center justify-center">
               Plan Your Visit
               <ChevronDown className="h-4 w-4 sm:h-5 sm:w-5 ml-2 group-hover:translate-y-1 transition-transform" />

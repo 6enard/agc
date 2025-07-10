@@ -47,10 +47,10 @@ const Events = () => {
 
   const getCategoryColor = (category: string) => {
     switch (category) {
-      case 'Family Event': return 'bg-green-100 text-green-800';
-      case 'Worship': return 'bg-blue-100 text-blue-800';
+      case 'Family Event': return 'bg-purple-100 text-purple-800';
+      case 'Worship': return 'bg-red-100 text-red-800';
       case 'Bible Study': return 'bg-purple-100 text-purple-800';
-      case 'Outreach': return 'bg-orange-100 text-orange-800';
+      case 'Outreach': return 'bg-red-100 text-red-800';
       default: return 'bg-gray-100 text-gray-800';
     }
   };
@@ -103,6 +103,7 @@ const Events = () => {
                 </div>
                 
                 <button className="flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors text-xs sm:text-sm lg:text-base">
+                <button className="flex items-center text-purple-600 font-medium hover:text-purple-700 transition-colors text-xs sm:text-sm lg:text-base">
                   Learn More <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 ml-1" />
                 </button>
               </div>
@@ -112,13 +113,14 @@ const Events = () => {
 
         {/* Event Calendar CTA - Mobile Optimized */}
         <div className="bg-blue-600 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 text-white text-center">
+        <div className="bg-gradient-to-r from-purple-600 to-red-600 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 text-white text-center">
           <div className="max-w-2xl mx-auto">
-            <Calendar className="h-10 w-10 sm:h-12 sm:w-12 lg:h-16 lg:w-16 mx-auto mb-3 sm:mb-4 text-blue-200" />
+            <Calendar className="h-10 w-10 sm:h-12 sm:w-12 lg:h-16 lg:w-16 mx-auto mb-3 sm:mb-4 text-white/80" />
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4">Never Miss an Event</h3>
-            <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-blue-100 mb-4 sm:mb-6 px-2">
+            <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-white/90 mb-4 sm:mb-6 px-2">
               Subscribe to our church calendar and get notifications about upcoming events, services, and special programs.
             </p>
-            <button className="bg-white text-blue-600 px-6 sm:px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors text-sm sm:text-base">
+            <button className="bg-white text-purple-600 px-6 sm:px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors text-sm sm:text-base">
               Subscribe to Calendar
             </button>
           </div>

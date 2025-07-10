@@ -7,6 +7,8 @@ import Pillars from './components/Pillars';
 import Services from './components/Services';
 import Ministries from './components/Ministries';
 import Events from './components/Events';
+import LakeviewAcademy from './components/LakeviewAcademy';
+import Giving from './components/Giving';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import MinistryDetail from './components/MinistryDetail';
@@ -19,7 +21,9 @@ function HomePage() {
       <About />
       <Services />
       <Ministries />
+      <LakeviewAcademy />
       <Events />
+      <Giving />
       <Contact />
     </>
   );

@@ -57,15 +57,15 @@ const Contact = () => {
             </div>
 
             {/* Prayer Request - Mobile Optimized */}
-            <div className="mt-6 sm:mt-8 bg-blue-600 rounded-xl sm:rounded-2xl p-4 sm:p-6 text-white">
+            <div className="mt-6 sm:mt-8 bg-gradient-to-r from-purple-600 to-red-600 rounded-xl sm:rounded-2xl p-4 sm:p-6 text-white">
               <div className="flex items-center mb-3 sm:mb-4">
                 <MessageSquare className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 mr-2" />
                 <h4 className="text-sm sm:text-base lg:text-lg font-semibold">Prayer Requests</h4>
               </div>
-              <p className="text-blue-100 mb-3 sm:mb-4 text-xs sm:text-sm lg:text-base">
+              <p className="text-white/80 mb-3 sm:mb-4 text-xs sm:text-sm lg:text-base">
                 Submit your prayer requests and our prayer team will lift you up in prayer.
               </p>
-              <button className="bg-white text-blue-600 px-4 sm:px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition-colors text-xs sm:text-sm lg:text-base">
+              <button className="bg-white text-purple-600 px-4 sm:px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition-colors text-xs sm:text-sm lg:text-base">
                 Submit Request
               </button>
             </div>
@@ -84,7 +84,7 @@ const Contact = () => {
                     <input
                       type="text"
                       id="firstName"
-                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm sm:text-base"
                       placeholder="Your first name"
                     />
                   </div>
@@ -95,7 +95,7 @@ const Contact = () => {
                     <input
                       type="text"
                       id="lastName"
-                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm sm:text-base"
                       placeholder="Your last name"
                     />
                   </div>
@@ -108,7 +108,7 @@ const Contact = () => {
                   <input
                     type="email"
                     id="email"
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm sm:text-base"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -120,7 +120,7 @@ const Contact = () => {
                   <input
                     type="tel"
                     id="phone"
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm sm:text-base"
                     placeholder="0700 000 000"
                   />
                 </div>
@@ -131,7 +131,7 @@ const Contact = () => {
                   </label>
                   <select
                     id="subject"
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm sm:text-base"
                   >
                     <option value="">Select a subject</option>
                     <option value="general">General Inquiry</option>
@@ -149,14 +149,14 @@ const Contact = () => {
                   <textarea
                     id="message"
                     rows={4}
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base resize-none"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm sm:text-base resize-none"
                     placeholder="Tell us how we can help you..."
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-blue-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium hover:bg-blue-700 transition-colors flex items-center justify-center text-sm sm:text-base"
+                  className="w-full bg-gradient-to-r from-purple-600 to-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium hover:from-purple-700 hover:to-red-700 transition-colors flex items-center justify-center text-sm sm:text-base"
                 >
                   <Send className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
                   Send Message

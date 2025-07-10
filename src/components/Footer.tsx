@@ -133,7 +133,6 @@ const Footer = () => {
             © 2024 Lakeview Africa Gospel Church. All rights reserved.
           </div>
           <div className="flex flex-wrap justify-center md:justify-end space-x-3 sm:space-x-4 lg:space-x-6 text-xs sm:text-sm">
-            <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
             <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">
               Privacy Policy
             </a>
@@ -145,9 +144,9 @@ const Footer = () => {
             </a>
           </div>
         </div>
+      </div>
     </footer>
+  );
+};
+
 export default Footer;
-  )
-}
-  )
-}

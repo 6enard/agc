@@ -99,6 +99,7 @@ const Footer = () => {
           <div>
             <h3 className="text-sm sm:text-base lg:text-lg font-semibold mb-3 sm:mb-4 lg:mb-6">Service Times</h3>
             <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
+              <div>
                 <div className="text-purple-400 font-medium text-xs sm:text-sm lg:text-base">Sunday Services</div>
                 <div className="text-gray-300 text-xs sm:text-sm">8:30 AM - First Service</div>
                 <div className="text-gray-300 text-xs sm:text-sm">10:00 AM - Second Service</div>
@@ -132,6 +133,7 @@ const Footer = () => {
             © 2024 Lakeview Africa Gospel Church. All rights reserved.
           </div>
           <div className="flex flex-wrap justify-center md:justify-end space-x-3 sm:space-x-4 lg:space-x-6 text-xs sm:text-sm">
+            <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
             <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">
               Privacy Policy
             </a>
@@ -141,7 +143,11 @@ const Footer = () => {
             <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">
               Accessibility
             </a>
-  );
-};
-
+          </div>
+        </div>
+    </footer>
 export default Footer;
+  )
+}
+  )
+}

@@ -69,19 +69,6 @@ const Giving = () => {
     }
   ];
 
-  const testimonials = [
-    {
-      quote: "Giving to God through our church has been a blessing. It's amazing to see how our contributions support missions and help our community.",
-      author: "Sarah M.",
-      role: "Church Member"
-    },
-    {
-      quote: "The convenience of mobile giving has made it easier for me to be consistent in my tithing and offerings.",
-      author: "David K.",
-      role: "Youth Leader"
-    }
-  ];
-
   return (
     <section id="giving" className="py-8 sm:py-12 lg:py-16 xl:py-20 bg-gradient-to-br from-purple-50 to-red-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -173,29 +160,6 @@ const Giving = () => {
                     <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-2">{area.title}</h4>
                     <p className="text-xs sm:text-sm text-gray-600 mb-3">{area.description}</p>
                     <p className="text-xs sm:text-sm text-gray-500 italic">{area.impact}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Testimonials */}
-        <div className="mb-12 sm:mb-16 lg:mb-20">
-          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 text-center">
-            Hearts of Generosity
-          </h3>
-          <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg border border-white/50">
-                <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 italic">"{testimonial.quote}"</p>
-                <div className="flex items-center">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-purple-400 to-red-400 rounded-full flex items-center justify-center mr-3">
-                    <span className="text-white font-bold text-sm sm:text-base">{testimonial.author.charAt(0)}</span>
-                  </div>
-                  <div>
-                    <div className="font-medium text-gray-900 text-sm sm:text-base">{testimonial.author}</div>
-                    <div className="text-xs sm:text-sm text-gray-600">{testimonial.role}</div>
                   </div>
                 </div>
               </div>
